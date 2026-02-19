@@ -21,6 +21,7 @@ class DashBoardScreen extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
+    var time = DateTime.now();
     return Scaffold(
       appBar: AppBar(
         title: Text("Dashboard"),
@@ -32,11 +33,26 @@ class DashBoardScreen extends StatelessWidget{
                 children: [
                   TextField(
                     decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(21),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(11),
                         borderSide: BorderSide(
-                          color: Colors.pink
+                          color: Colors.deepOrange,
+                          width: 2
                         )
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(11),
+                        borderSide: BorderSide(
+                          color: Colors.pink,
+                          width: 2
+                        )
+                      ),
+                      suffixText: "Username exists.",
+                      suffixIcon: IconButton(
+                        icon: Icon(Icons.remove_red_eye),
+                        onPressed: (){
+
+                        },
                       )
                     ),
                   ),
@@ -44,7 +60,7 @@ class DashBoardScreen extends StatelessWidget{
                   TextField(
                     decoration: InputDecoration(
                         border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(21),
+                            borderRadius: BorderRadius.circular(11),
                             borderSide: BorderSide(
                                 color: Colors.pink
                             )
